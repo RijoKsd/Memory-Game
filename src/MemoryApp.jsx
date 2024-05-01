@@ -1,10 +1,14 @@
+// import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Game from "./pages/Game";
 
 const MemoryApp = () => {
-  // const api_key =import.meta.env.VITE_API_KEY;
+ 
   return (
    <div className= "container mx-auto ">
     <Header />
+    <Game />
+    {/* <Footer /> */}
    </div>
   );
 };

@@ -7,12 +7,12 @@ const Header = () => {
       >
         Mind Flip
       </h1>
-      <p className="text-sm md:text-lg text-gray-500 -tracking-tighter ">
+      <p className="text-sm md:text-lg text-gray-500 -tracking-tighter mt-3 ">
         Test your memory skills! Click on items, but beware—don&#39;t click the
         same one twice.
       </p>
       <p className=" text-sm md:text-lg text-gray-500">
-        Shuffle your brain and see how far you can go
+        Shuffle your brain and see how far you can go.
       </p>
     </header>
   );
