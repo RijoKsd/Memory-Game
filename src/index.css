@@ -12,6 +12,6 @@ body {
 
 
 /* overriding spin animation behavior for inifinte duration */
-.animate-spin-clokwise {
+.animate-spin-clockwise {
     animation: spin-clockwise 0.6s linear both infinite;
 }

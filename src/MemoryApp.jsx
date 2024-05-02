@@ -1,4 +1,4 @@
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Game from "./pages/Game";
 
@@ -8,7 +8,7 @@ const MemoryApp = () => {
    <div className= "container mx-auto ">
     <Header />
     <Game />
-    {/* <Footer /> */}
+    <Footer />
    </div>
   );
 };

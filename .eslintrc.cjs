@@ -18,4 +18,10 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  // prettier: {
+  //   printWidth: 80,
+  //   semi: false,
+  //   singleQuote: true,
+  //   trailingComma: 'all',
+  // }
 }

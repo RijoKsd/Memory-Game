@@ -1,7 +1,16 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white text-center p-4">
-      <p>&copy; 2021 Memory Game</p>
+    <footer className="shadow  text-center p-4  absolute container bottom-0 text-black animate-slide-in-right">
+      <p>
+        Made with ❤️ by{" "}
+        <a
+          className="underline"
+          href="https://rijoksd.netlify.app/"
+          target="_blank"
+        >
+          Rijo Sebastian
+        </a>
+      </p>
     </footer>
   );
 };
