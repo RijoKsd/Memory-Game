@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="shadow  text-center p-4  absolute container bottom-0 text-black animate-slide-in-right">
+    <footer className="shadow-inner  text-center p-4  absolute container bottom-0 text-black animate-slide-in-right">
       <p>
         Made with ❤️ by{" "}
         <a
