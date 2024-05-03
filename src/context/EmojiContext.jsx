@@ -4,7 +4,7 @@ export const EmojiContext = createContext();
 
 const EmojiContextProvider = ({ children }) => {
   const api_key = import.meta.env.VITE_API_KEY;
-  const api_url = import.meta.env.VITE_API_URL;
+  const api_url =  "https://emoji-api.com/emojis?access_key="
   const { emojiData, isLoading } = EmojiAPI(api_key, api_url);
   return (
     <div>
