@@ -4,7 +4,7 @@ import { useState } from "react";
 const EmojiAPI = (api_key, api_url) => {
   //  state to store the emojis and loading state
 
-  const [emojis, setEmojis] = useState([]);
+const [emojiData, setEmojiData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   //   combine the api key and url
@@ -15,7 +15,7 @@ const EmojiAPI = (api_key, api_url) => {
     fetch(API)
       .then((response)=> response.json())
       .then((data) => {
-        setEmojis(data);
+        setEmojiData(data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -23,7 +23,7 @@ const EmojiAPI = (api_key, api_url) => {
       });
   }, [API]);
 
-  return { emojis, isLoading };
+  return { emojiData, isLoading };
 };
 
 export default EmojiAPI;
