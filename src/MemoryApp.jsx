@@ -2,6 +2,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import EmojiContextProvider from "./context/EmojiContext";
 import Game from "./pages/Game";
+ 
 
 const MemoryApp = () => {
   return (
@@ -9,6 +10,7 @@ const MemoryApp = () => {
       <Header />
       <EmojiContextProvider>
         <Game />
+  
       </EmojiContextProvider>
       <Footer />
     </div>
