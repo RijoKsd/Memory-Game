@@ -4,7 +4,6 @@ import { useContext, useState } from "react";
 import DifficultyLevel from "../utils/difficultyLevel";
 
 const GameLogic = () => {
-  console.log(DifficultyLevel, "DifficultyLevel from GameLogic.jsx");
   const { emojiData } = useContext(EmojiContext);
 
   const [score, setScore] = useState(0);
@@ -17,9 +16,20 @@ const GameLogic = () => {
   const [difficultyLength, setDifficultyLength] = useState(
     DifficultyLevel[difficulty]
   ); // the DifficultyLevel object is imported from utils/difficultyLevel.js
-  const [currentGameStatus, setCurrentGameStatus] = useState("start"); // start, playing, gameover
+  const [currentGameStatus, setCurrentGameStatus] = useState("playing"); // start, playing, gameover
 
-  return null;
+  const handleChangeDifficulty = (level) => () => {
+    // setDifficulty(level);
+    // setDifficultyLength(DifficultyLevel[level]);
+    // setCurrentGameStatus("playing");
+    console.log(level, "level");
+  };
+
+  return {
+    currentGameStatus,
+
+    handleChangeDifficulty,
+  };
 };
 
 export default GameLogic;
