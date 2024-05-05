@@ -1,5 +1,5 @@
 const Card = ({ emoji, handleCardClick }) => {
-  console.log(emoji, "emoji from card");
+  console.log(emoji.character, "emoji from card");
   return (
     <button
       onClick={() => {
@@ -14,6 +14,7 @@ const Card = ({ emoji, handleCardClick }) => {
         </div>
       </div>
     </button>
+  
   );
 };
 

@@ -19,6 +19,7 @@ const Game = () => {
     handleChangeCurrentGameStatus,
   } = GameLogic();
 
+
   return (
     // flex flex-col items-center justify-center h-[400px] gap-2
     <div className=" flex flex-col mx-auto justify-between animate-fade-in-up  container">
