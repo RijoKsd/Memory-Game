@@ -1,5 +1,4 @@
-import TestGameBoard from "./TestGameBoard";
-import TestScore from "./TestScore";
+
 
 const Button = ({ text, onClick }) => {
   return (

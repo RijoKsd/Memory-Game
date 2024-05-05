@@ -16,12 +16,12 @@ const GameLogic = () => {
   const [difficultyLength, setDifficultyLength] = useState(
     DifficultyLevel[difficulty]
   ); // the DifficultyLevel object is imported from utils/difficultyLevel.js
-  const [currentGameStatus, setCurrentGameStatus] = useState("playing"); // start, playing, gameover
+  const [currentGameStatus, setCurrentGameStatus] = useState("start"); // start, playing, gameover
 
   const handleChangeDifficulty = (level) => () => {
     // setDifficulty(level);
     // setDifficultyLength(DifficultyLevel[level]);
-    // setCurrentGameStatus("playing");
+    setCurrentGameStatus("playing");
     console.log(level, "level");
   };
 

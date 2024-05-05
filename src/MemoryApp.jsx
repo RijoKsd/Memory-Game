@@ -10,7 +10,6 @@ const MemoryApp = () => {
       <Header />
       <EmojiContextProvider>
         <Game />
-  
       </EmojiContextProvider>
       <Footer />
     </div>
