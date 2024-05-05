@@ -1,27 +1,19 @@
-const Card = () => {
-  const emojis = [
-    "🍎",
-    "🍌",
-    "🍒",
-    "🍇",
-    "🍉",
-    "🍊",
-    "🍋",
-    "🍍",
-    "🍓",
-    "🍑",
-    "🍐",
-    "🍏",
-  ];
+const Card = ({ emoji, handleCardClick }) => {
+  console.log(emoji, "emoji from card");
   return (
-    <div className= "">
-      <div className="grid grid-cols-4 place-items-center gap-3 mt-3">
-        {emojis.map((emoji, index) => (
-          <div key={index} className="shadow-md text-6xl p-5 rounded-lg text-center cursor-pointer"
-          >{emoji}</div>
-        ))}
+    <button
+      onClick={() => {
+        handleCardClick(emoji.slug);
+      }}
+    >
+      <div className="card flex-1 h-40 rounded-xl bg-zinc-900  cursor-pointer hover:bg-zinc-800 shadow-md">
+        <div className="card-body flex flex-col h-full p-5 justify-center items-center">
+          <span className="card-title flex w-full flex-1 justify-center items-center text-6xl">
+            {emoji.character}
+          </span>
+        </div>
       </div>
-    </div>
+    </button>
   );
 };
 

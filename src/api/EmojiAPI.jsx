@@ -4,7 +4,7 @@ import { useState } from "react";
 const EmojiAPI = (api_key, api_url) => {
   //  state to store the emojis and loading state
 
-const [emojiData, setEmojiData] = useState([]);
+  const [emojiData, setEmojiData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   //   combine the api key and url
@@ -13,9 +13,14 @@ const [emojiData, setEmojiData] = useState([]);
   //  fetch the emojis from the api
   useEffect(() => {
     fetch(API)
-      .then((response)=> response.json())
+      .then((response) => response.json())
       .then((data) => {
-        setEmojiData(data);
+        // remove the flag emojis because they are not rendering as flags in the app
+        const apiDataWithoutFlags = data.filter(
+          (emoji) => !emoji.slug.includes("flag")
+        );
+        setEmojiData(apiDataWithoutFlags);
+
         setIsLoading(false);
       })
       .catch((error) => {

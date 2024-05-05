@@ -1,6 +1,4 @@
 import Button from "../components/Button";
-
- 
 const StartLogic = ({ handleChangeDifficulty }) => {
   return (
     <div className="flex flex-col items-center justify-center h-[400px] gap-2">
@@ -17,4 +15,4 @@ const StartLogic = ({ handleChangeDifficulty }) => {
   );
 };
 
-export default StartLogic
+export default StartLogic;

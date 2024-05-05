@@ -5,53 +5,75 @@ import { useContext } from "react";
 import Scores from "../components/Scores";
 import Card from "../components/Card";
 import StartLogic from "./StartLogic";
+import Loader from "../components/Loader";
 
 const Game = () => {
-  const { emojiData } = useContext(EmojiContext);
-  const { currentGameStatus, handleChangeDifficulty } = GameLogic();
+  const { isLoading } = useContext(EmojiContext);
+  const {
+    currentGameStatus,
+    handleChangeDifficulty,
+    availableEmojis,
+    handleCardClick,
+    highScore,
+    score,
+    handleChangeCurrentGameStatus,
+  } = GameLogic();
 
   return (
     // flex flex-col items-center justify-center h-[400px] gap-2
-    <div className="  animate-fade-in-up  container">
+    <div className=" flex flex-col mx-auto justify-between animate-fade-in-up  container">
       {currentGameStatus === "start" && (
-        // <div className="flex flex-col items-center justify-center h-[400px] gap-2">
-        //   <h1 className="font-extrabold text-3xl text-[#111111] my-5">
-        //     Difficulty
-        //   </h1>
-
-        //   <div className="flex gap-5">
-        //     <Button text="Easy" onClick={handleChangeDifficulty("easy")} />
-        //     <Button text="Medium" onClick={handleChangeDifficulty("medium")} />
-        //     <Button text="Hard" onClick={handleChangeDifficulty("hard")} />
-        //   </div>
-        // </div>
-        <StartLogic handleChangeDifficulty={handleChangeDifficulty} /> 
+        <StartLogic handleChangeDifficulty={handleChangeDifficulty} />
       )}
       {currentGameStatus === "playing" && (
-        // <div>
-        //   <h1 className="font-extrabold text-3xl text-[#111111] my-5">
-        //     {/* Score: {score} */}
-        //   </h1>
-        // </div>
-        <div className="grid place-items-center">
-          <Scores />
-          <div>
-            <Card />
+        <>
+          {!isLoading && <Scores />}
+          <div className="flex-1 p-5">
+            {!isLoading ? (
+              <div
+                className={`grid grid-cols-3 ${
+                  availableEmojis.length === 12
+                    ? "md:grid-cols-4"
+                    : "md:grid-cols-3"
+                } gap-5 justify-center animate-fade-in-up`}
+              >
+                {availableEmojis.map((emoji, index) => (
+                  <Card
+                    key={index}
+                    emoji={emoji}
+                    handleCardClick={handleCardClick}
+                  />
+                ))}
+              </div>
+            ) : (
+              <Loader />
+            )}
           </div>
-        </div>
+        </>
       )}
-      {currentGameStatus === "playing" && (
-        <div>
-          <h1 className="font-extrabold text-3xl text-[#111111] my-5">
-            {/* High Score: {highScore} */}
-          </h1>
-        </div>
-      )}
+
       {currentGameStatus === "game-over" && (
-        <div>
+        <div className=" flex-1 flex flex-col items-center justify-center">
           <h1 className="font-extrabold text-3xl text-[#111111] my-5">
-            Game Over
+            Game Over{" "}
           </h1>
+          <Scores
+            highScore={highScore}
+            score={score}
+            className={"w-full text-center"}
+          />
+
+          <div className="flex w-full items-center justify-center gap-5">
+            <Button
+              text="Play Again"
+              onClick={handleChangeCurrentGameStatus("playing")}
+            />
+            <Button
+              outline: true
+              text="Change Difficulty"
+              onClick={handleChangeCurrentGameStatus("start")}
+            />
+          </div>
         </div>
       )}
     </div>
