@@ -6,12 +6,12 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f3f4f6;
-  color: #333;
+  min-height: 100vh;
+
 }
 
 
-/* overriding spin animation behavior for inifinte duration */
+/* overriding spin animation behavior for infinite duration */
 .animate-spin-clockwise {
     animation: spin-clockwise 0.6s linear both infinite;
 }

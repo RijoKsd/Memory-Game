@@ -6,7 +6,6 @@ import PlayingLogic from "./PlayingLogic";
 import GameOverLogic from "./GameOverLogic";
 
 const Game = () => {
-  const { isLoading } = useContext(EmojiContext);
   const {
     currentGameStatus,
     handleChangeDifficulty,
@@ -18,8 +17,7 @@ const Game = () => {
   } = GameLogic();
 
   return (
-    // flex flex-col items-center justify-center h-[400px] gap-2
-    <div className=" flex flex-col mx-auto justify-between animate-fade-in-up  container">
+    <div>
       {currentGameStatus === "start" && (
         <StartLogic handleChangeDifficulty={handleChangeDifficulty} />
       )}

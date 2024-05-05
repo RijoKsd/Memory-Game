@@ -1,6 +1,6 @@
 const DifficultyLevel = {
-  easy: 4,
-  medium: 8,
+  easy: 6,
+  medium: 9,
   hard: 12,
 };
 

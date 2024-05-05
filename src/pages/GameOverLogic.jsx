@@ -5,8 +5,8 @@ import Scores from "../components/Scores";
 
 const GameOverLogic = ({ score, highScore, handleChangeCurrentGameStatus }) => {
   return (
-    <div className=" flex-1 flex flex-col items-center justify-center">
-      <h1 className="font-extrabold text-3xl text-[#111111] my-5">
+    <div className=" flex flex-col justify-center items-center h-[300px]">
+      <h1 className="font-extrabold text-3xl text-[#111111] my-5 text-center">
         Game Over{" "}
       </h1>
       <Scores

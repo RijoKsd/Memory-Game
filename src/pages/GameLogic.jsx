@@ -14,7 +14,7 @@ const GameLogic = () => {
   const [clickedEmojisHistory, setClickedEmojisHistory] = useState([]);
   const [clickedCardCount, setClickedCardCount] = useState(0);
 
-  const [difficulty, setDifficulty] = useState("medium"); // easy, medium, hard
+  const [difficulty, setDifficulty] = useState(""); // easy, medium, hard
   // This is the number of emojis that will be displayed on the screen
   const [difficultyLength, setDifficultyLength] = useState(
     DifficultyLevel[difficulty]
@@ -37,7 +37,11 @@ const GameLogic = () => {
   // }, [emojiData, difficultyLength, score, highScore, clickedCardCount]);
 
   useEffect(() => {
-    if (emojiData && emojiData.length > 0 && availableEmojis.length < difficultyLength) {
+    if (
+      emojiData &&
+      emojiData.length > 0 &&
+      availableEmojis.length < difficultyLength
+    ) {
       //  call a function that will shuffle the emojis and set the availableEmojis
       getAvailableEmojis();
     }
@@ -64,8 +68,6 @@ const GameLogic = () => {
     }
   };
 
- 
-
   // This function will be called when the user selects a difficulty level (easy, medium, hard)
   const handleChangeDifficulty = (level) => () => {
     setDifficulty(level);
@@ -74,7 +76,6 @@ const GameLogic = () => {
   };
 
   const handleCardClick = (id) => {
- 
     if (clickedEmojisHistory.includes(id)) {
       setScore(0);
       setClickedCardCount(0);
@@ -107,12 +108,3 @@ const GameLogic = () => {
 };
 
 export default GameLogic;
-
-/*
-total 8 states:
-1. score
-2. highScore
-3. difficulty such as easy, medium, hard
-4. difficultyLength such as for easy 4, medium 8, hard 12
-5. currentGameStatus such as start, playing, game-over
- */

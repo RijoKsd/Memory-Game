@@ -1,13 +1,11 @@
-import MemoryApp from "./MemoryApp"
+import MemoryApp from "./MemoryApp";
 
- 
- const App = () => {
-   return (
-   <> 
-    <MemoryApp />
-   </>
-   )
- }
- 
- export default App
- 
+const App = () => {
+  return (
+    <>
+      <MemoryApp />
+    </>
+  );
+};
+
+export default App;

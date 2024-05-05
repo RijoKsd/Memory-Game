@@ -1,7 +1,7 @@
 import Button from "../components/Button";
 const StartLogic = ({ handleChangeDifficulty }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-[400px] gap-2">
+    <div className="flex flex-col items-center justify-center h-[300px] gap-2">
       <h1 className="font-extrabold text-3xl text-[#111111] my-5">
         Difficulty
       </h1>

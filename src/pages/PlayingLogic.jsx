@@ -1,7 +1,7 @@
 import Scores from "../components/Scores";
 
- import { useContext } from "react";
- import { EmojiContext } from "../context/EmojiContext";
+import { useContext } from "react";
+import { EmojiContext } from "../context/EmojiContext";
 import Card from "../components/Card";
 import Loader from "../components/Loader";
 
@@ -13,12 +13,12 @@ const PlayingLogic = ({
 }) => {
   const { isLoading } = useContext(EmojiContext);
   return (
-    <>
+    <div className=" p-4 md:w-1/2 mx-auto mb-24  md:h-[590px]">
       {!isLoading && <Scores score={score} highScore={highScore} />}
-      <div className="flex-1 p-5">
+      <div className="">
         {!isLoading ? (
           <div
-            className={`grid grid-cols-3 ${
+            className={`grid grid-cols-3 md:grid-cols-3  ${
               availableEmojis.length === 12
                 ? "md:grid-cols-4"
                 : "md:grid-cols-3"
@@ -36,8 +36,8 @@ const PlayingLogic = ({
           <Loader />
         )}
       </div>
-    </>
+    </div>
   );
 };
 
-export default PlayingLogic
+export default PlayingLogic;
