@@ -19,7 +19,6 @@ const Game = () => {
     handleChangeCurrentGameStatus,
   } = GameLogic();
 
-
   return (
     // flex flex-col items-center justify-center h-[400px] gap-2
     <div className=" flex flex-col mx-auto justify-between animate-fade-in-up  container">
@@ -28,7 +27,7 @@ const Game = () => {
       )}
       {currentGameStatus === "playing" && (
         <>
-          {!isLoading && <Scores />}
+          {!isLoading && <Scores score={score} highScore={highScore} />}
           <div className="flex-1 p-5">
             {!isLoading ? (
               <div
@@ -54,7 +53,7 @@ const Game = () => {
       )}
 
       {currentGameStatus === "game-over" && (
-        <div className=" flex-1 flex flex-col items-center justify-center">
+      <div className=" flex-1 flex flex-col items-center justify-center">
           <h1 className="font-extrabold text-3xl text-[#111111] my-5">
             Game Over{" "}
           </h1>
@@ -67,18 +66,20 @@ const Game = () => {
           <div className="flex w-full items-center justify-center gap-5">
             <Button
               text="Play Again"
-              onClick={handleChangeCurrentGameStatus("playing")}
+              onClick={()=>{ handleChangeCurrentGameStatus("playing")}}
             />
             <Button
-              outline: true
+              outline
               text="Change Difficulty"
-              onClick={handleChangeCurrentGameStatus("start")}
+              onClick={()=>{handleChangeCurrentGameStatus("start")}}
             />
           </div>
         </div>
+
       )}
     </div>
   );
 };
 
 export default Game;
+
