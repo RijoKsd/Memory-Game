@@ -1,5 +1,4 @@
 const Card = ({ emoji, handleCardClick }) => {
-  console.log(emoji.character, "emoji from card");
   return (
     <button
       className=""

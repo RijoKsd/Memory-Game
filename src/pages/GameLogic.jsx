@@ -19,7 +19,7 @@ const GameLogic = () => {
   const [difficultyLength, setDifficultyLength] = useState(
     DifficultyLevel[difficulty]
   ); // the DifficultyLevel object is imported from utils/difficultyLevel.js
-  const [currentGameStatus, setCurrentGameStatus] = useState("game-over"); // start, playing, game-over
+  const [currentGameStatus, setCurrentGameStatus] = useState("start"); // start, playing, game-over
 
   // useEffect(() => {
   //   if (emojiData && availableEmojis.length < difficultyLength) {
